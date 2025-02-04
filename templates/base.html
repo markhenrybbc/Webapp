@@ -1,1 +1,56 @@
-
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Bootstrap Example</title>
+</head>
+<body>
+  <header>
+    <section class="header">
+      <div class="nav_btn">
+        <span class="open"><img src="{% static 'images/menu-burger.png' %}" alt=""></span>
+        <span class="close cross"><img src="{% static 'images/cross.png' %}" alt=""></span>
+      </div>
+      <div class="logo"></div>
+    </section>
+    <nav>
+      <a href="" class="home">
+        <span><img src="{% static 'images/home.png' %}" alt=""></span>
+        <span>Home</span>
+      </a>
+      <a href="/videos/">
+        <span><img src="{% static 'images/play.png' %}" alt=""></span>
+        <span>Videos</span>
+      </a>
+      <a href="/login/">
+        <span><img src="{% static 'images/portrait.png' %}" alt=""></span>
+        <span>Login</span>
+      </a>
+      <a href="">
+        <span><img src="{% static 'images/info.png' %}" alt=""></span>
+        <span>About Us</span>
+      </a>
+    </nav>
+  </header>
+  <script>
+    const nav_bar = document.querySelector("nav");
+    const openBtn = document.querySelector(".open");
+    const closeBtn = document.querySelector(".cross");
+    
+    
+    openBtn.addEventListener('click', (e) => {
+      nav_bar.classList.add("nav_bar");
+      openBtn.classList.add('close');
+      closeBtn.classList.remove('close')
+    });
+    closeBtn.addEventListener('click', (e) => {
+      nav_bar.classList.remove('nav_bar');
+      openBtn.classList.remove("close");
+      closeBtn.classList.add("close");
+    })
+  </script>
+</body>
+</html>
